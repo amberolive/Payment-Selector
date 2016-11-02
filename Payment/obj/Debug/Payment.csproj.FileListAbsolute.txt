@@ -1,0 +1,12 @@
+E:\Payment\Payment\bin\Debug\Payment.exe.config
+E:\Payment\Payment\bin\Debug\Payment.exe
+E:\Payment\Payment\bin\Debug\Payment.pdb
+E:\Payment\Payment\obj\Debug\Payment.csprojResolveAssemblyReference.cache
+E:\Payment\Payment\obj\Debug\Payment.Customer.resources
+E:\Payment\Payment\obj\Debug\Payment.Properties.Resources.resources
+E:\Payment\Payment\obj\Debug\Payment.csproj.GenerateResource.Cache
+E:\Payment\Payment\obj\Debug\Payment.exe
+E:\Payment\Payment\obj\Debug\Payment.pdb
+D:\Payment\Payment\bin\Debug\Payment.exe.config
+D:\Payment\Payment\obj\Debug\Payment.exe
+D:\Payment\Payment\obj\Debug\Payment.pdb
