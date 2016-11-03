@@ -102,13 +102,13 @@
             // 
             // cbCustNames
             // 
+            this.cbCustNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustNames.FormattingEnabled = true;
             this.cbCustNames.Location = new System.Drawing.Point(256, 40);
             this.cbCustNames.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cbCustNames.Name = "cbCustNames";
             this.cbCustNames.Size = new System.Drawing.Size(217, 40);
             this.cbCustNames.TabIndex = 6;
-            this.cbCustNames.Text = "--Select a Name--";
             // 
             // Customer
             // 
