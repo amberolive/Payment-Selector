@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.gbBilling = new System.Windows.Forms.GroupBox();
-            this.rbCreditCard = new System.Windows.Forms.RadioButton();
             this.rbBillCustomer = new System.Windows.Forms.RadioButton();
+            this.rbCreditCard = new System.Windows.Forms.RadioButton();
             this.lboxCreditCardType = new System.Windows.Forms.ListBox();
             this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.cbExpYear = new System.Windows.Forms.ComboBox();
@@ -56,17 +56,6 @@
             this.gbBilling.TabStop = false;
             this.gbBilling.Text = "Billing";
             // 
-            // rbCreditCard
-            // 
-            this.rbCreditCard.AutoSize = true;
-            this.rbCreditCard.Location = new System.Drawing.Point(55, 35);
-            this.rbCreditCard.Name = "rbCreditCard";
-            this.rbCreditCard.Size = new System.Drawing.Size(156, 33);
-            this.rbCreditCard.TabIndex = 0;
-            this.rbCreditCard.TabStop = true;
-            this.rbCreditCard.Text = "Credit Card";
-            this.rbCreditCard.UseVisualStyleBackColor = true;
-            // 
             // rbBillCustomer
             // 
             this.rbBillCustomer.AutoSize = true;
@@ -78,10 +67,28 @@
             this.rbBillCustomer.Text = "Bill Customer";
             this.rbBillCustomer.UseVisualStyleBackColor = true;
             // 
+            // rbCreditCard
+            // 
+            this.rbCreditCard.AutoSize = true;
+            this.rbCreditCard.Location = new System.Drawing.Point(55, 35);
+            this.rbCreditCard.Name = "rbCreditCard";
+            this.rbCreditCard.Size = new System.Drawing.Size(156, 33);
+            this.rbCreditCard.TabIndex = 0;
+            this.rbCreditCard.TabStop = true;
+            this.rbCreditCard.Text = "Credit Card";
+            this.rbCreditCard.UseVisualStyleBackColor = true;
+            this.rbCreditCard.CheckedChanged += new System.EventHandler(this.rbCreditCard_CheckedChanged);
+            // 
             // lboxCreditCardType
             // 
             this.lboxCreditCardType.FormattingEnabled = true;
             this.lboxCreditCardType.ItemHeight = 29;
+            this.lboxCreditCardType.Items.AddRange(new object[] {
+            "Visa",
+            "MasterCard",
+            "Chase",
+            "American Express",
+            "Discover"});
             this.lboxCreditCardType.Location = new System.Drawing.Point(236, 155);
             this.lboxCreditCardType.Name = "lboxCreditCardType";
             this.lboxCreditCardType.Size = new System.Drawing.Size(285, 149);
@@ -183,7 +190,7 @@
             this.Controls.Add(this.gbBilling);
             this.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Payment";
             this.Text = "Payment";
             this.gbBilling.ResumeLayout(false);
