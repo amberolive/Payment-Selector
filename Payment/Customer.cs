@@ -51,11 +51,11 @@ namespace Payment
 
         private void btSelectPayment_Click(object sender, EventArgs e)
         {
-            Payment paymentForm = new Payment();
+            Payment paymentForm = new Payment(this);
             paymentForm.Show();
         }
 
-        private void setDisplayPamentMethod(String paymentMethod)
+        public void setDisplayPamentMethod(String paymentMethod)
         {
             displayPaymentMethod.Text = paymentMethod;
         } 

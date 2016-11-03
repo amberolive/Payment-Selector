@@ -108,6 +108,7 @@
             this.cbExpYear.Name = "cbExpYear";
             this.cbExpYear.Size = new System.Drawing.Size(113, 37);
             this.cbExpYear.TabIndex = 3;
+            this.cbExpYear.Text = "Year";
             // 
             // cbExpMonth
             // 
@@ -149,6 +150,7 @@
             this.btOk.TabIndex = 6;
             this.btOk.Text = "OK";
             this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // btCancel
             // 
