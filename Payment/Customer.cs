@@ -54,5 +54,10 @@ namespace Payment
             Payment paymentForm = new Payment();
             paymentForm.Show();
         }
+
+        private void setDisplayPamentMethod(String paymentMethod)
+        {
+            displayPaymentMethod.Text = paymentMethod;
+        } 
     }
 }
