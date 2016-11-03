@@ -21,11 +21,13 @@ namespace Payment
     public partial class Payment : Form
     {
         Customer customerForm;
+        String customerName;
 
         public Payment(Customer customerForm)
         {
             InitializeComponent();
             this.customerForm = customerForm;
+            this.customerName = customerForm.getCustomerName();
         }
 
         // Populates expiration year combobox with the current and next 10 years.
@@ -142,6 +144,7 @@ namespace Payment
         {
             String paymentMethod = "";
             
+            // Executed if user selected Credit Card.
             if(rbCreditCard.Checked)
             {
                 if(isCardTypeSelected())
@@ -152,6 +155,7 @@ namespace Payment
                         {
                             if(isExpYearSelected())
                             {
+                                paymentMethod += customerName + "'s Payment Information\n\n";
                                 paymentMethod += "Charge to Credit Card:\n\n";
                                 paymentMethod += "Card Type: " + lboxCreditCardType.SelectedItem.ToString() + "\n";
                                 paymentMethod += "Card Number: " + tbCardNumber.Text + "\n";
@@ -193,6 +197,16 @@ namespace Payment
                     MessageBox.Show("Please select a credit card type.");
                     lboxCreditCardType.Focus();
                 }
+            }
+
+            else if(rbBillCustomer.Checked)
+            {
+                paymentMethod += customerName + "'s Payment Information\n\n";
+                paymentMethod += "Bill Customer\n\n";
+                paymentMethod += "Default Billing: " + cbSetDefaultBillMethod.Checked.ToString();
+
+                customerForm.setDisplayPamentMethod(paymentMethod);
+                this.Close();
             }
         }
     }

@@ -61,11 +61,11 @@
             // 
             // displayPaymentMethod
             // 
-            this.displayPaymentMethod.AutoSize = true;
+            this.displayPaymentMethod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.displayPaymentMethod.Location = new System.Drawing.Point(46, 171);
             this.displayPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayPaymentMethod.Name = "displayPaymentMethod";
-            this.displayPaymentMethod.Size = new System.Drawing.Size(0, 32);
+            this.displayPaymentMethod.Size = new System.Drawing.Size(306, 199);
             this.displayPaymentMethod.TabIndex = 2;
             // 
             // btSelectPayment
@@ -75,7 +75,7 @@
             this.btSelectPayment.Name = "btSelectPayment";
             this.btSelectPayment.Size = new System.Drawing.Size(196, 45);
             this.btSelectPayment.TabIndex = 3;
-            this.btSelectPayment.Text = "Select Payment";
+            this.btSelectPayment.Text = "Select/Change Payment";
             this.btSelectPayment.UseVisualStyleBackColor = true;
             this.btSelectPayment.Click += new System.EventHandler(this.btSelectPayment_Click);
             // 

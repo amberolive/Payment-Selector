@@ -51,13 +51,28 @@ namespace Payment
 
         private void btSelectPayment_Click(object sender, EventArgs e)
         {
-            Payment paymentForm = new Payment(this);
-            paymentForm.Show();
+            if(cbCustNames.SelectedIndex != -1)
+            {
+                Payment paymentForm = new Payment(this);
+                paymentForm.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Please select a customer's name.");
+            }
+            
         }
 
         public void setDisplayPamentMethod(String paymentMethod)
         {
             displayPaymentMethod.Text = paymentMethod;
         } 
+
+        public String getCustomerName()
+        {
+            String customerName = cbCustNames.SelectedItem.ToString();
+            return customerName;
+        }
     }
 }
