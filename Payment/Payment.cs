@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Payment
 {
-    public partial class Customer : Form
+    public partial class Payment : Form
     {
-        public Customer()
+        public Payment()
         {
             InitializeComponent();
-        }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
