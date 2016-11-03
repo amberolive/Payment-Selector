@@ -35,7 +35,7 @@
             this.btSelectPayment = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCustNames = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbCustName
@@ -52,7 +52,7 @@
             // lbPaymentMethod
             // 
             this.lbPaymentMethod.AutoSize = true;
-            this.lbPaymentMethod.Location = new System.Drawing.Point(37, 115);
+            this.lbPaymentMethod.Location = new System.Drawing.Point(37, 128);
             this.lbPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPaymentMethod.Name = "lbPaymentMethod";
             this.lbPaymentMethod.Size = new System.Drawing.Size(203, 32);
@@ -62,7 +62,7 @@
             // displayPaymentMethod
             // 
             this.displayPaymentMethod.AutoSize = true;
-            this.displayPaymentMethod.Location = new System.Drawing.Point(37, 173);
+            this.displayPaymentMethod.Location = new System.Drawing.Point(46, 171);
             this.displayPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayPaymentMethod.Name = "displayPaymentMethod";
             this.displayPaymentMethod.Size = new System.Drawing.Size(0, 32);
@@ -70,7 +70,7 @@
             // 
             // btSelectPayment
             // 
-            this.btSelectPayment.Location = new System.Drawing.Point(462, 115);
+            this.btSelectPayment.Location = new System.Drawing.Point(462, 128);
             this.btSelectPayment.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btSelectPayment.Name = "btSelectPayment";
             this.btSelectPayment.Size = new System.Drawing.Size(196, 45);
@@ -80,7 +80,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(394, 303);
+            this.btSave.Location = new System.Drawing.Point(394, 332);
             this.btSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(112, 38);
@@ -90,7 +90,7 @@
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(546, 303);
+            this.btExit.Location = new System.Drawing.Point(546, 332);
             this.btExit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(112, 38);
@@ -99,21 +99,22 @@
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // comboBox1
+            // cbCustNames
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(256, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 40);
-            this.comboBox1.TabIndex = 6;
+            this.cbCustNames.FormattingEnabled = true;
+            this.cbCustNames.Location = new System.Drawing.Point(256, 40);
+            this.cbCustNames.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.cbCustNames.Name = "cbCustNames";
+            this.cbCustNames.Size = new System.Drawing.Size(217, 40);
+            this.cbCustNames.TabIndex = 6;
+            this.cbCustNames.Text = "--Select a Name--";
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 374);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(671, 411);
+            this.Controls.Add(this.cbCustNames);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.btSelectPayment);
@@ -125,6 +126,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Customer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.Customer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +140,7 @@
         private System.Windows.Forms.Button btSelectPayment;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btExit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCustNames;
     }
 }
 
