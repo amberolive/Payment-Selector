@@ -17,6 +17,27 @@ namespace Payment
             InitializeComponent();
         }
 
+        // Populates expiration year combobox with the current and next 10 years.
+        private void Payment_Load(object sender, EventArgs e)
+        {
+            // Variable to track how many years have been added.
+            int x = 0;
+
+            // Get current date, then get current year.
+            DateTime currentDate = DateTime.Now;
+            int currentYear = currentDate.Year;
+
+            while(x <= 10)
+            {
+                // Add year to combobox.
+                cbExpYear.Items.Add(currentYear);
+                // Increment year.
+                currentYear++;
+                x++;
+            }
+        }
+
+        // Disables/enables controls based on which payment type is selected.
         private void rbCreditCard_CheckedChanged(object sender, EventArgs e)
         {
             if(rbBillCustomer.Checked)
@@ -30,6 +51,8 @@ namespace Payment
             }
         }
 
+        // Disables creditCardType listbox, card number textbox, expiration month combobox,
+        // and expiration year combobox.
         private void disableControls()
         {
             lboxCreditCardType.Enabled = false;
@@ -38,6 +61,8 @@ namespace Payment
             cbExpYear.Enabled = false;
         }
 
+        // Enables creditCardType listbox, card number textbox, expiration month combobox,
+        // and expiration year combobox.
         private void enableControls()
         {
             lboxCreditCardType.Enabled = true;

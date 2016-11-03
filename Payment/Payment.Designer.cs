@@ -112,10 +112,24 @@
             // cbExpMonth
             // 
             this.cbExpMonth.FormattingEnabled = true;
+            this.cbExpMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cbExpMonth.Location = new System.Drawing.Point(236, 428);
             this.cbExpMonth.Name = "cbExpMonth";
             this.cbExpMonth.Size = new System.Drawing.Size(113, 37);
             this.cbExpMonth.TabIndex = 4;
+            this.cbExpMonth.Text = "Month";
             // 
             // cbSetDefaultBillMethod
             // 
@@ -193,6 +207,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Payment";
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.Payment_Load);
             this.gbBilling.ResumeLayout(false);
             this.gbBilling.PerformLayout();
             this.ResumeLayout(false);
