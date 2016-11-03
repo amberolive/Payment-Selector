@@ -42,6 +42,8 @@
             this.lbCardType = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbExpDate = new System.Windows.Forms.Label();
+            this.lbMonth = new System.Windows.Forms.Label();
+            this.lbYear = new System.Windows.Forms.Label();
             this.gbBilling.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,16 +105,19 @@
             // 
             // cbExpYear
             // 
+            this.cbExpYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExpYear.FormattingEnabled = true;
             this.cbExpYear.Location = new System.Drawing.Point(408, 428);
             this.cbExpYear.Name = "cbExpYear";
             this.cbExpYear.Size = new System.Drawing.Size(113, 37);
             this.cbExpYear.TabIndex = 3;
-            this.cbExpYear.Text = "Year";
             // 
             // cbExpMonth
             // 
+            this.cbExpMonth.DisplayMember = "(none)";
+            this.cbExpMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExpMonth.FormattingEnabled = true;
+            this.cbExpMonth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbExpMonth.Items.AddRange(new object[] {
             "January",
             "February",
@@ -130,7 +135,6 @@
             this.cbExpMonth.Name = "cbExpMonth";
             this.cbExpMonth.Size = new System.Drawing.Size(113, 37);
             this.cbExpMonth.TabIndex = 4;
-            this.cbExpMonth.Text = "Month";
             // 
             // cbSetDefaultBillMethod
             // 
@@ -189,11 +193,33 @@
             this.lbExpDate.TabIndex = 10;
             this.lbExpDate.Text = "Expiration Date:";
             // 
+            // lbMonth
+            // 
+            this.lbMonth.AutoSize = true;
+            this.lbMonth.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMonth.Location = new System.Drawing.Point(260, 398);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.Size = new System.Drawing.Size(72, 27);
+            this.lbMonth.TabIndex = 11;
+            this.lbMonth.Text = "Month";
+            // 
+            // lbYear
+            // 
+            this.lbYear.AutoSize = true;
+            this.lbYear.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.Location = new System.Drawing.Point(442, 398);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(51, 27);
+            this.lbYear.TabIndex = 12;
+            this.lbYear.Text = "Year";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 648);
+            this.Controls.Add(this.lbYear);
+            this.Controls.Add(this.lbMonth);
             this.Controls.Add(this.lbExpDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCardType);
@@ -233,5 +259,7 @@
         private System.Windows.Forms.Label lbCardType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbExpDate;
+        private System.Windows.Forms.Label lbMonth;
+        private System.Windows.Forms.Label lbYear;
     }
 }
