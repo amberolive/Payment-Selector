@@ -77,6 +77,7 @@
             this.btSelectPayment.TabIndex = 3;
             this.btSelectPayment.Text = "Select Payment";
             this.btSelectPayment.UseVisualStyleBackColor = true;
+            this.btSelectPayment.Click += new System.EventHandler(this.btSelectPayment_Click);
             // 
             // btSave
             // 

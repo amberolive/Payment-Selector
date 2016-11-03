@@ -49,6 +49,10 @@ namespace Payment
             this.Close();
         }
 
-        
+        private void btSelectPayment_Click(object sender, EventArgs e)
+        {
+            Payment paymentForm = new Payment();
+            paymentForm.Show();
+        }
     }
 }
