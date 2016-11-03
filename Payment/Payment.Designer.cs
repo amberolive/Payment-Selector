@@ -160,6 +160,7 @@
             this.btCancel.TabIndex = 7;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // lbCardType
             // 

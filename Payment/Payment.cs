@@ -209,5 +209,17 @@ namespace Payment
                 this.Close();
             }
         }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Do you want to leave payment form?", "Leave Form?",
+                     MessageBoxButtons.YesNo);
+
+            // Close form if user wants to.
+            if(answer == DialogResult.Yes)
+            {
+                this.Close();
+            }  
+        }
     }
 }
