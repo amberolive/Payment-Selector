@@ -22,6 +22,8 @@ namespace Payment
     {
         Customer customerForm;
         String customerName;
+        int currentMonth;
+        int currentYear;
 
         public Payment(Customer customerForm)
         {
@@ -38,14 +40,16 @@ namespace Payment
 
             // Get current date, then get current year.
             DateTime currentDate = DateTime.Now;
-            int currentYear = currentDate.Year;
+            int year = currentDate.Year;
+            this.currentYear = currentDate.Year;
+            this.currentMonth = currentDate.Month;
 
             while(x <= 10)
             {
                 // Add year to combobox.
-                cbExpYear.Items.Add(currentYear);
+                cbExpYear.Items.Add(year);
                 // Increment year.
-                currentYear++;
+                year++;
                 x++;
             }
         }
@@ -138,6 +142,21 @@ namespace Payment
             return false;
         }
 
+        private bool isExpDateValid()
+        {
+            int yearSelected = 0;
+
+            if(int.TryParse(cbExpYear.SelectedItem.ToString(), out yearSelected))
+            {
+                if ((cbExpMonth.SelectedIndex + 1) > currentMonth || yearSelected > currentYear)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
         // If card type and expiration date selected and valid card number selected,
         // display payment method information on customer form.
         private void btOk_Click(object sender, EventArgs e)
@@ -155,16 +174,24 @@ namespace Payment
                         {
                             if(isExpYearSelected())
                             {
-                                paymentMethod += customerName + "'s Payment Information\n\n";
-                                paymentMethod += "Charge to Credit Card:\n\n";
-                                paymentMethod += "Card Type: " + lboxCreditCardType.SelectedItem.ToString() + "\n";
-                                paymentMethod += "Card Number: " + tbCardNumber.Text + "\n";
-                                paymentMethod += "Expiration Date: " + cbExpMonth.SelectedItem.ToString() +
-                                                 " " + cbExpYear.SelectedItem.ToString() + "\n";
-                                paymentMethod += "Default Billing: " + cbSetDefaultBillMethod.Checked.ToString();
+                                if(isExpDateValid())
+                                {
+                                    paymentMethod += customerName + "'s Payment Information\n\n";
+                                    paymentMethod += "Charge to Credit Card:\n\n";
+                                    paymentMethod += "Card Type: " + lboxCreditCardType.SelectedItem.ToString() + "\n";
+                                    paymentMethod += "Card Number: " + tbCardNumber.Text + "\n";
+                                    paymentMethod += "Expiration Date: " + cbExpMonth.SelectedItem.ToString() +
+                                                     " " + cbExpYear.SelectedItem.ToString() + "\n";
+                                    paymentMethod += "Default Billing: " + cbSetDefaultBillMethod.Checked.ToString();
 
-                                customerForm.setDisplayPamentMethod(paymentMethod);
-                                this.Close();
+                                    customerForm.setDisplayPamentMethod(paymentMethod);
+                                    this.Close();
+                                }
+
+                                else
+                                {
+                                    MessageBox.Show("Credit card has expired.");
+                                }
                             }
 
                             // Expiration year not selected error.
