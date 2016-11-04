@@ -36,6 +36,16 @@
             this.btSave = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.cbCustNames = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePaymentMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectChangePaymentMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearSavedPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbCustName
@@ -88,6 +98,7 @@
             this.btSave.TabIndex = 4;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btExit
             // 
@@ -111,6 +122,81 @@
             this.cbCustNames.TabIndex = 6;
             this.cbCustNames.SelectedIndexChanged += new System.EventHandler(this.cbCustNames_SelectedIndexChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(671, 33);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.savePaymentMethodToolStripMenuItem,
+            this.selectChangePaymentMethodToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearSavedPaymentsToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // savePaymentMethodToolStripMenuItem
+            // 
+            this.savePaymentMethodToolStripMenuItem.Name = "savePaymentMethodToolStripMenuItem";
+            this.savePaymentMethodToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.savePaymentMethodToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.savePaymentMethodToolStripMenuItem.Text = "Save";
+            this.savePaymentMethodToolStripMenuItem.ToolTipText = "Save Payment Method";
+            this.savePaymentMethodToolStripMenuItem.Click += new System.EventHandler(this.btSave_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // selectChangePaymentMethodToolStripMenuItem
+            // 
+            this.selectChangePaymentMethodToolStripMenuItem.Name = "selectChangePaymentMethodToolStripMenuItem";
+            this.selectChangePaymentMethodToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.selectChangePaymentMethodToolStripMenuItem.Text = "Select/Change Payment";
+            this.selectChangePaymentMethodToolStripMenuItem.Click += new System.EventHandler(this.btSelectPayment_Click);
+            // 
+            // clearSavedPaymentsToolStripMenuItem
+            // 
+            this.clearSavedPaymentsToolStripMenuItem.Name = "clearSavedPaymentsToolStripMenuItem";
+            this.clearSavedPaymentsToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.clearSavedPaymentsToolStripMenuItem.Text = "Clear Saved Payments";
+            this.clearSavedPaymentsToolStripMenuItem.Click += new System.EventHandler(this.clearSavedPaymentsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
@@ -123,12 +209,16 @@
             this.Controls.Add(this.displayPaymentMethod);
             this.Controls.Add(this.lbPaymentMethod);
             this.Controls.Add(this.lbCustName);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Customer";
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.Customer_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +233,15 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.ComboBox cbCustNames;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savePaymentMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectChangePaymentMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearSavedPaymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
