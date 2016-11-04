@@ -109,6 +109,7 @@
             this.cbCustNames.Name = "cbCustNames";
             this.cbCustNames.Size = new System.Drawing.Size(217, 40);
             this.cbCustNames.TabIndex = 6;
+            this.cbCustNames.SelectedIndexChanged += new System.EventHandler(this.cbCustNames_SelectedIndexChanged);
             // 
             // Customer
             // 

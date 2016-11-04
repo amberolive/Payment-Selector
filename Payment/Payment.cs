@@ -184,6 +184,8 @@ namespace Payment
                                                      " " + cbExpYear.SelectedItem.ToString() + "\n";
                                     paymentMethod += "Default Billing: " + cbSetDefaultBillMethod.Checked.ToString();
 
+
+
                                     customerForm.setDisplayPamentMethod(paymentMethod);
                                     this.Close();
                                 }

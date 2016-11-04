@@ -13,6 +13,8 @@ namespace Payment
 {
     public partial class Customer : Form
     {
+        public Dictionary<String, String> customerPaymentMethod = new Dictionary<string, string>();
+
         public Customer()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace Payment
                 {
                     name = namesFile.ReadLine();
 
+                    customerPaymentMethod.Add(name, "");
+                  
                     cbCustNames.Items.Add(name);
                 }
 
@@ -73,6 +77,21 @@ namespace Payment
         {
             String customerName = cbCustNames.SelectedItem.ToString();
             return customerName;
+        }
+
+        public void addCustomerPaymentMethod(String name, String paymentMethod)
+        {
+            customerPaymentMethod.Add(name, paymentMethod);
+        }
+
+        public void removeCustomerPaymentMethod(String name)
+        {
+            customerPaymentMethod[name] = "";
+        }
+
+        private void cbCustNames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displayPaymentMethod.Text = customerPaymentMethod[cbCustNames.SelectedItem.ToString()];
         }
     }
 }
