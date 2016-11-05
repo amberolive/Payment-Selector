@@ -17,3 +17,4 @@ D:\Payment\Payment\obj\Debug\Payment.Customer.resources
 D:\Payment\Payment\obj\Debug\Payment.Payment.resources
 D:\Payment\Payment\obj\Debug\Payment.Properties.Resources.resources
 D:\Payment\Payment\obj\Debug\Payment.csproj.GenerateResource.Cache
+D:\Payment\Payment\obj\Debug\Payment.PaymentAboutBox.resources

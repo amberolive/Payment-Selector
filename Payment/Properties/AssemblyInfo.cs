@@ -6,9 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Payment")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This application allows the user to select, change, and save " +
+                                "payment methods.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Writtenn by Amber Rivera")]
 [assembly: AssemblyProduct("Payment")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

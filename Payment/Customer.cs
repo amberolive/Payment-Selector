@@ -159,5 +159,11 @@ namespace Payment
             
         }
 
+        // Open payment about box.
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaymentAboutBox about = new PaymentAboutBox();
+            about.Show();
+        }
     }
 }
