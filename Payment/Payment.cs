@@ -142,6 +142,7 @@ namespace Payment
             return false;
         }
 
+        // Returns true if credit card expiration date is in the future.
         private bool isExpDateValid()
         {
             int yearSelected = 0;
@@ -237,6 +238,7 @@ namespace Payment
             }
         }
 
+        // Closes form if user confirms that they want to.
         private void btCancel_Click(object sender, EventArgs e)
         {
             DialogResult answer = MessageBox.Show("Do you want to leave payment form?", "Leave Form?",
